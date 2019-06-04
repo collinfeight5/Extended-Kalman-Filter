@@ -15,4 +15,5 @@ My Project consists of the following files, all of which are in the src folder:
 * kalman_filter.cpp, which contains the kalman filter equations for prediction and updates
 * tools.cpp, which contains the functions for RMSE and Jacobian Matrix
 * Header files support these files
+* Inside of the source folder, Eigen was an external library used for this project
 
