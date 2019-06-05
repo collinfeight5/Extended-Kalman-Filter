@@ -1,6 +1,6 @@
 [//]: # (Image References)
 
-[image1]: ./Images/EKF-1.png "Simulator"
+[image1]: ./images/EKF-1.png "Simulator"
 
 # Extended-Kalman-Filter
 The goals of this project were the following:
@@ -20,6 +20,8 @@ I have attached a screenshot from the simulator running below, and the marks on 
 * Lidar measurements are red circles
 * Radar measurements are blue circles with an arrow pointing in the direction of the observed angle
 * Estimation markers are green triangles.
+
+The RMSE values correspond to the RMSE calculated between the ground-truth values and the predicted values calculated by the EKF project. 
 
 ![alt text][image1]
 
