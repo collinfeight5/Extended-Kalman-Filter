@@ -18,3 +18,4 @@ My Project consists of the following files, all of which are in the src folder:
 * Inside of the source folder, "Eigen" is an external library used for this project
 
 ###LABEL DOTS IN IMAGE
+###Check np.random.random in behavioral cloning
