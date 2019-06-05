@@ -17,3 +17,4 @@ My Project consists of the following files, all of which are in the src folder:
 * Header files support these files
 * Inside of the source folder, "Eigen" is an external library used for this project
 
+###LABEL DOTS IN IMAGE
