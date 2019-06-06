@@ -18,21 +18,24 @@ void KalmanFilter::Init(VectorXd &x_in, MatrixXd &P_in, MatrixXd &F_in,
 }
 
 void KalmanFilter::Predict() {
-  x_ = F_ * x_;
+//full eq --> x_ = F_*x_ + B(Control input)*mu(Control Vector) + v(Process noise)
+//B*mu above is external forces, considered zero here
+  x_ = F_ * x_; 
   MatrixXd F_trans ;
   F_trans = F_.transpose();
+  // P is prediced covariance
   P_ = F_ * P_ * F_trans + Q_;
 }
 
 //Standard Kalman Filter Equations -> Lidar(Laser)
 void KalmanFilter::Update(const VectorXd &z) {
-  VectorXd z_predict = H_ * x_;
-  VectorXd y = z - z_predict;
+  VectorXd z_predict = H_ * x_; 
+  VectorXd y = z - z_predict; //diff b/t measured value and predicted value
   MatrixXd Ht = H_.transpose();
-  MatrixXd S = H_ * P_ * Ht + R_;
+  MatrixXd S = H_ * P_ * Ht + R_; //total error from measured value, R(known) and predicted value
   MatrixXd Si = S.inverse();
   MatrixXd PHt = P_ * Ht;
-  MatrixXd K = PHt * Si;
+  MatrixXd K = PHt * Si; //Kalman Gain
     
   //new guess
   x_ = x_ + (K * y);
